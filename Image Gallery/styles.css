@@ -1,0 +1,54 @@
+:root{
+  --bg1: #0f172a;
+  --bg2: #26002c;
+  --card:#0b1220;
+  --accent1:#ff007a;
+  --accent2:#00e5ff;
+  --accent3:#fffb00;
+  --muted:#d1d5db;
+  --border: rgba(255,255,255,0.06);
+}
+*{box-sizing:border-box}
+#app{max-width:1200px;margin:0 auto}
+#app{max-width:1200px;margin:0 auto}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;margin:0;background:linear-gradient(120deg,var(--bg1),var(--bg2));color:var(--muted);overflow-y:auto;background-size:400% 400%;animation:discoBg 10s ease infinite}
+.topbar{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px 24px;background:transparent}
+.topbar h1{margin:0;font-size:3.2rem;color:var(--accent1);font-weight:700;text-shadow:0 6px 20px rgba(255,0,122,0.12);order:2}
+#searchForm{display:flex;gap:8px;order:1}
+#searchForm input{padding:16px 20px;border:1px solid rgba(255,255,255,0.06);border-radius:999px;min-width:480px;background:rgba(255,255,255,0.04);color:var(--muted);font-size:1.1rem}
+#searchForm button{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#071028;border:none;padding:14px 24px;border-radius:999px;cursor:pointer;box-shadow:0 12px 30px rgba(0,229,255,0.08);font-size:1.05rem}
+.categories{display:none}
+.category-panel{padding:12px 20px;display:flex;flex-direction:column;gap:8px;background:transparent}
+.category-header{display:flex;align-items:center;justify-content:space-between}
+.category-header h2{margin:0;font-size:1rem}
+.clear-category{background:transparent;border:none;font-size:20px;cursor:pointer}
+.category-search{display:flex;gap:8px}
+.category-search input{padding:8px 10px;border:1px solid #e6e7ee;border-radius:6px;flex:1}
+.category-search button{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;padding:24px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.08));border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);box-shadow:0 10px 30px rgba(0,0,0,0.5);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,0.6)}
+.card img{display:block;width:100%;height:160px;object-fit:cover;filter:contrast(1.02) saturate(1.08)}
+.card .meta{padding:10px 12px;font-size:0.9rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.card .badge{padding:4px 8px;border-radius:999px;background:linear-gradient(90deg,var(--accent2),var(--accent3));color:#071028;font-weight:600;font-size:0.8rem}
+.controls{display:flex;justify-content:center;padding:12px}
+#loadMore{padding:10px 16px;border-radius:10px;border:1px solid #dbe2f0;background:#fff;cursor:pointer;box-shadow:0 8px 20px rgba(2,6,23,0.04)}
+
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:50}
+.modal.show{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.45)}
+.modal-content{position:relative;z-index:2;max-width:1100px;width:95%;background:transparent;display:flex;flex-direction:column;align-items:center}
+.modal-content img{max-width:100%;max-height:80vh;border-radius:12px;box-shadow:0 36px 90px rgba(0,0,0,0.7)}
+.modal-close{position:absolute;right:8px;top:-36px;background:#fff;border-radius:50%;border:none;color:#111;font-size:22px;padding:4px 8px;cursor:pointer;box-shadow:0 6px 18px rgba(2,6,23,0.12)}
+.modal-actions{display:flex;gap:8px;margin-top:12px}
+.modal-actions button, .modal-actions a{padding:8px 12px;border-radius:8px;border:none;background:#fff;color:#111;text-decoration:none;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+.modal-actions{display:flex;gap:8px;margin-top:10px}
+.modal-actions button, .modal-actions a{padding:8px 12px;border-radius:8px;border:none;background:#fff;color:#111;text-decoration:none}
+
+@media (max-width:600px){.topbar{flex-direction:column;gap:8px}.card img{height:140px}}
+
+@keyframes discoBg{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Image Gallery</h1>
+    <form id="searchForm">
+      <input id="searchInput" placeholder="Search images (e.g., mountains, cats)" aria-label="Search images" />
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  <!-- categories removed per user request -->
+
+  <main>
+    <section id="gallery" class="gallery"></section>
+    <div class="controls">
+      <button id="loadMore">Load more</button>
+    </div>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="modalClose" class="modal-close">×</button>
+      <img id="modalImage" src="" alt="Preview" />
+      <div class="modal-actions">
+        <button id="prevBtn">◀</button>
+        <button id="nextBtn">▶</button>
+        <a id="downloadBtn" href="#" download>Download</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
